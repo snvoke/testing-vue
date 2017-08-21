@@ -1,7 +1,6 @@
 # test
 
 > A Vue.js project
-Hello world
 
 ## Build Setup
 

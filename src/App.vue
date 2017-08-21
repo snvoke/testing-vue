@@ -1,19 +1,23 @@
 <template>
-  <p>{{message}}</p>
+  <div id="app">
+    <NewSearch></NewSearch>
+    <NewSelect></NewSelect>
+    <hello></hello>    
+  </div>
 </template>
 
 <script>
-  // import Greeting from './Greeting.vue'
+  import Hello from './components/Hello.vue'
+  import Search from './components/Search.vue'
+  import SelectBlock from './components/SelectBlock.vue'
 
   export default {
-    data () {
-      return {
-        message: 'Hello'
-      }
+    name: 'app',
+    components: {
+      Hello,
+      NewSearch: Search,
+      NewSelect: SelectBlock
     }
-    // components: {
-    //   Greeting
-    // }
   }
 </script>
 
