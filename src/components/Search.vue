@@ -1,29 +1,38 @@
 <template>
   <div class="search-block">
-		<input id="input-search" type="text" placeholder="Search users" v-model="search">
-		<button id='btn-search' type='submit' v-on:click="greeting"> {{ text }} </button>
+		<input  type="text" :value="value" @input="$emit('input', query)" >
+		<!-- <button id='btn-search' type='submit' v-on:click="greeting"> {{ text }} </button> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'searchBlock',
-  data () {
-		return {
-			text: 'search'
+	name: 'searchBlock',
+
+	watch: {
+		value (newValue) {			
+			this.value = newValue;
+			bus.$emit('query', this.value)
 		}
 	},
-	methods: {
-		greeting(event) {
-			event.preventDefault();
 
-			alert('hello');
-		},
+	props: {
+		value: String
+	},
 
-		filterItem() {
-
+  data: function() {
+		return {
+			query: this.value,			
+			// text: 'search'
 		}
-	}
+	},
+
+	// methods: {
+		// greeting(event) {
+			// event.preventDefault();
+			// alert('hello');
+		// }
+	// }
 }
 </script>
 
@@ -31,11 +40,13 @@ export default {
 	.search-block {
 		display: flex;
 		flex-wrap: wrap;
-		max-width: 400px;
+		flex: 1 0 0;
+		max-width: 800px;
 		margin-bottom: 20px;
 	}
 
 	input {
+		flex: 1 0 0;
 		margin-right: 10px;
 		padding: 10px;
 		border: 0;

@@ -1,5 +1,6 @@
 <template>
-  <select name="select">
+  <select name="select" v-model="selected">
+		<option disabled value="">Выберите один из вариантов</option>
 		<option v-for="option in options" v-bind:value="option.value"> {{ option.text }} </option>
 	</select>
 </template>
@@ -9,10 +10,11 @@ export default {
 	name: 'selectValue',
 	data () {
 		return {
+			selected: '',
 			options: [
-				{ text: 'One', value: 'A'},
-				{ text: 'Two', value: 'B'},
-				{ text: 'Three', value: 'C'}
+				{ text: 'User', value: 'User'},
+				{ text: 'Admin', value: 'Admin'},
+				{ text: 'superAdmin', value: 'superAdmin'}
 			]
 		}
 	}

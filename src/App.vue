@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <NewSearch></NewSearch>
-    <NewSelect></NewSelect>
-    <hello></hello>    
+
+    <div class="inner">
+      <NewSearch v-model="query" value="adf adsf adsf"></NewSearch>
+      <!-- <NewSelect></NewSelect> -->
+    </div>
+    <!-- {{ query }} -->
+
+    <!-- <NewTable :filter-key="searchQuery"></NewTable>     -->
   </div>
 </template>
 
@@ -10,15 +15,27 @@
   import Hello from './components/Hello.vue'
   import Search from './components/Search.vue'
   import SelectBlock from './components/SelectBlock.vue'
-
+  bus.$on('queryChange', function (id) {
+    console.log (id)
+  });
   export default {
     name: 'app',
     components: {
-      Hello,
+      // NewTable: Hello,
       NewSearch: Search,
       NewSelect: SelectBlock
     }
   }
 </script>
+
+<style scoped>
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+</style>
+
 
 
