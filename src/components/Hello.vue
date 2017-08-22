@@ -19,9 +19,6 @@
 
 export default {
 	name: 'hello',
-	props: {
-		'filterKey': String
-	},
   data: function() {
     return {
 			searchQuery: '',
