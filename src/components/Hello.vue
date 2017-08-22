@@ -24,7 +24,7 @@ export default {
 	},
   data: function() {
     return {
-			// query: '',
+			searchQuery: '',
 			sortColumn: '',
 			ascending: false,
 			rows: [
@@ -64,7 +64,7 @@ export default {
 	computed: {
 		filteredUsers: function() {
 			return this.rows.filter(function(user) {
-				return user.name.toLowerCase().indexOf(this.filterKey.toLowerCase()) > -1;
+				return user.name.toLowerCase().indexOf(this.searchQuery.toLowerCase()) > -1;
 			}.bind(this));
 		},
 		columns: function columns() {

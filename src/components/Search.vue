@@ -1,38 +1,27 @@
 <template>
   <div class="search-block">
-		<input  type="text" :value="value" @input="$emit('input', query)" >
-		<!-- <button id='btn-search' type='submit' v-on:click="greeting"> {{ text }} </button> -->
+		<input id="input-search" type="text" placeholder="Search users" v-model="searchQuery">
+		<button id='btn-search' type='submit' v-on:click="greeting"> {{ text }} </button>
   </div>
 </template>
 
 <script>
 export default {
-	name: 'searchBlock',
-
-	watch: {
-		value (newValue) {			
-			this.value = newValue;
-			bus.$emit('query', this.value)
-		}
-	},
-
-	props: {
-		value: String
-	},
+  name: 'searchBlock',
 
   data: function() {
 		return {
-			query: this.value,			
-			// text: 'search'
+			searchQuery: '',
+			text: 'search'
 		}
 	},
 
-	// methods: {
-		// greeting(event) {
-			// event.preventDefault();
-			// alert('hello');
-		// }
-	// }
+	methods: {
+		greeting(event) {
+			event.preventDefault();
+			alert('hello');
+		}
+	}
 }
 </script>
 

@@ -2,12 +2,11 @@
   <div id="app">
 
     <div class="inner">
-      <NewSearch v-model="query" value="adf adsf adsf"></NewSearch>
-      <!-- <NewSelect></NewSelect> -->
+      <NewSearch></NewSearch>
+      <NewSelect></NewSelect>
     </div>
-    <!-- {{ query }} -->
 
-    <!-- <NewTable :filter-key="searchQuery"></NewTable>     -->
+    <NewTable></NewTable>    
   </div>
 </template>
 
@@ -15,13 +14,11 @@
   import Hello from './components/Hello.vue'
   import Search from './components/Search.vue'
   import SelectBlock from './components/SelectBlock.vue'
-  bus.$on('queryChange', function (id) {
-    console.log (id)
-  });
+
   export default {
     name: 'app',
     components: {
-      // NewTable: Hello,
+      NewTable: Hello,
       NewSearch: Search,
       NewSelect: SelectBlock
     }
