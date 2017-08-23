@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-
-    <search @input="searchQuery = arguments[0]"></search>
-    <data-list :searchQuery="searchQuery"></data-list>
-
+    <search v-on:input="searchQuery = arguments[0]"></search>
+    <data-list v-bind:searchQuery="searchQuery"></data-list>
   </div>
 </template>
 
@@ -25,7 +23,6 @@
       'search': Search,
     }
   }
-
 </script>
 
 <style scoped>
