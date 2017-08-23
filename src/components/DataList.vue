@@ -18,10 +18,9 @@
 <script>
 
 export default {
-	name: 'hello',
+	props: ['searchQuery'],
   data: function() {
     return {
-			searchQuery: '',
 			sortColumn: '',
 			ascending: false,
 			rows: [

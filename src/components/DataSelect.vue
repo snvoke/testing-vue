@@ -7,8 +7,7 @@
 
 <script>
 export default {
-	name: 'selectValue',
-	data () {
+	data: function() {
 		return {
 			selected: '',
 			options: [

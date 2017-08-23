@@ -1,25 +1,14 @@
 <template>
   <div class="search-block">
-		<input id="input-search" type="text" placeholder="Search users" v-model="searchQuery">
-		<button id='btn-search' type='submit' v-on:click="greeting"> {{ text }} </button>
+		<input id="input-search" type="text" placeholder="Search users" @input="$emit('input',$event.target.value)">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'searchBlock',
-
   data: function() {
 		return {
-			searchQuery: '',
-			text: 'search'
-		}
-	},
-
-	methods: {
-		greeting(event) {
-			event.preventDefault();
-			alert('hello');
+			
 		}
 	}
 }
