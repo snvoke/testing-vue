@@ -18,9 +18,7 @@
 <script>
 
 export default {
-	props: {
-		searchQuery: String
-	},
+	props: ['searchQuery'],
   data: function() {
     return {
 			sortColumn: '',

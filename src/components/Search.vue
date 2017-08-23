@@ -1,6 +1,6 @@
 <template>
   <div class="search-block">
-		<input id="input-search" type="text" placeholder="Search users" v-on:input="$emit('input',$event.target.value)">
+		<input id="input-search" type="text" placeholder="Search users" @input="$emit('input',$event.target.value)">
   </div>
 </template>
 
