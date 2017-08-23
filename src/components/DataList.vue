@@ -7,7 +7,7 @@
 					<div class="arrow" v-if="column == sortColumn" v-bind:class="ascending ? 'arrow_up' : 'arrow_down'"></div>
 				</th>
 			</tr>
-			<tr v-for='row in filteredUsers'>
+			<tr v-for='row in filteredRoot'>
 				<td v-for="column in columns">{{row[column]}}</td>
 			</tr>
 		</table>
@@ -21,6 +21,7 @@ export default {
 	props: ['searchQuery'],
   data: function() {
     return {
+			selected: 'admin',
 			sortColumn: '',
 			ascending: false,
 			rows: [
@@ -63,6 +64,16 @@ export default {
 				return user.name.toLowerCase().indexOf(this.searchQuery.toLowerCase()) > -1;
 			}.bind(this));
 		},
+		filteredRoot: function() {
+			return this.rows.filter(function(user){
+				// alert(user.root);
+				if (user.root.toLowerCase() == 'admin') {
+					return 1;
+				} else {
+					return -1;
+				}
+			}.bind(this));
+		},
 		columns: function columns() {
       if (this.rows.length == 0) {
         return [];
@@ -100,12 +111,16 @@ export default {
 		flex: 1 0 0;
 	}
 
+	table tr:nth-child(even) {
+		background-color: #fdfdfd;
+	}
+
 	.arrow {
 		position: absolute;
 		width: 0;
 		height: 0;
 		top: 50%;
-		left: 55%;
+		left: 56%;
 		margin-top: -2.5px;
 	}
 

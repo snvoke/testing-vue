@@ -1,9 +1,16 @@
 <template>
   <div id="app">
 
-    <search @input="searchQuery = arguments[0]"></search>
-    <data-list :searchQuery="searchQuery"></data-list>
+    <div class="container">
+      <div class="inner">
+        <search @input="searchQuery = arguments[0]"></search>
+        <data-select></data-select>
+      </div>
+      
+      <data-list :searchQuery="searchQuery"></data-list>
+    </div>
 
+    
   </div>
 </template>
 
@@ -29,7 +36,14 @@
 </script>
 
 <style scoped>
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
 
+  .inner {
+    display: flex;
+  }
 </style>
 
 

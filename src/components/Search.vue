@@ -19,7 +19,8 @@ export default {
 		display: flex;
 		flex-wrap: wrap;
 		flex: 1 0 0;
-		max-width: 800px;
+		margin-left: auto;
+		max-width: 400px;
 		margin-bottom: 20px;
 	}
 

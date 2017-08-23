@@ -11,8 +11,8 @@ export default {
 		return {
 			selected: '',
 			options: [
-				{ text: 'User', value: 'User'},
-				{ text: 'Admin', value: 'Admin'},
+				{ text: 'User', value: 'user'},
+				{ text: 'Admin', value: 'admin'},
 				{ text: 'superAdmin', value: 'superAdmin'}
 			]
 		}
