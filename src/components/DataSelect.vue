@@ -1,5 +1,5 @@
 <template>
-  <select name="select" v-model="selected">
+  <select name="select" v-on:input = "$emit('input', $event.target.value)">
 		<option disabled value="">Выберите один из вариантов</option>
 		<option v-for="option in options" v-bind:value="option.value"> {{ option.text }} </option>
 	</select>

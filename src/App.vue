@@ -3,11 +3,11 @@
 
     <div class="container">
       <div class="inner">
-        <search @input="searchQuery = arguments[0]"></search>
-        <data-select></data-select>
+        <search v-on:input="searchQuery = arguments[0]"></search>
+        <data-select v-on:input="selected = arguments[0]"></data-select>
       </div>
       
-      <data-list :searchQuery="searchQuery"></data-list>
+      <data-list v-bind:searchQuery="searchQuery" v-bind:selected="selected"></data-list>
     </div>
 
     
@@ -23,7 +23,8 @@
     name: 'app',
     data: function() {
       return {
-        searchQuery: ''
+        searchQuery: '',
+        selected: ''
       }
     },
     components: {
